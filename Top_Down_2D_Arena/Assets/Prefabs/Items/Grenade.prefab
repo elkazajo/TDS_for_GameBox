@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8019130807385280419}
   - component: {fileID: 8019130807385280418}
   - component: {fileID: 535033108}
-  - component: {fileID: 535033104}
+  - component: {fileID: 267951220}
+  - component: {fileID: 267951225}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8019130807385280417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.0979404, y: -2.0466259, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 942235131
-  m_SortingLayer: 5
+  m_SortingLayerID: -300113155
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1979061039, guid: f064215fdb1aef147aba1ac0180047fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,10 +121,10 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04653561, y: -0.04321167}
-  m_Size: {x: 0.3404491, y: 0.41357666}
+  m_Offset: {x: -0.032047957, y: -0.040314153}
+  m_Size: {x: 0.42158002, y: 0.46794054}
   m_Direction: 0
---- !u!114 &535033104
+--- !u!114 &267951220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,9 +136,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f4378ec12939141b9d13049549d1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  knockbackForce: 5
+  speed: 2
   damage: 10
-  respawnTime: 0.2
-  distanceFromPlayer: 2
+  distanceFromPlayer: 3
   smallExplosion: {fileID: 209753484788749636, guid: 78f0059677bc4504aba632244d3200d0, type: 3}
+--- !u!114 &267951225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019130807385280417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9dad1691b95b3409dcbd55c2214e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  targetTag:
+  - Enemy
+  - Player

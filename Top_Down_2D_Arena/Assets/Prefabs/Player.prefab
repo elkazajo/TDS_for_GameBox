@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 8738610324219798958}
   - component: {fileID: 8738610324219798959}
   - component: {fileID: 8738610324219798944}
+  - component: {fileID: 901363551}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -161,9 +162,6 @@ MonoBehaviour:
   bulletSpwaner2: {fileID: 8738610323836980826}
   movementSpeed: 7
   shootingForce: 10
-  health: 100
-  damageTaken: 20
-  deathDuration: 2
   isDead: 0
   wasShot: 0
 --- !u!50 &8738610324219798957
@@ -241,8 +239,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffectPrefab: {fileID: 3344232782995547062, guid: 36b21d9a4d9e39a4fbe928d51fe47e3e, type: 3}
   isPlayer: 1
+  experienceAmount: 0
   maxHealth: 100
   currentHealth: 0
+  isAlive: 0
+--- !u!114 &901363551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738610324219798952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea393cf56b8844e41953444cc4614e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovementConfiner: {fileID: 0}
 --- !u!1 &8738610324441891460
 GameObject:
   m_ObjectHideFlags: 0

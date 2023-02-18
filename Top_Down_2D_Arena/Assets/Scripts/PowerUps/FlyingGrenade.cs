@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class FlyingGrenade : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float knockbackForce = 1.5f;
+    [SerializeField] private float speed = 3f;
     [SerializeField] private float damage = 10f;
-    [SerializeField] private float respawnTime = 2f;
     [SerializeField] private float distanceFromPlayer = 5.0f;
     [SerializeField] private GameObject smallExplosion;
 
     private Transform playerTransform;
-    private Health enemyHealth;
     private string enemyTag = "Enemy";
     private string playerTag = "Player";
 
@@ -30,11 +27,6 @@ public class FlyingGrenade : MonoBehaviour
     {
         if (collision.CompareTag(enemyTag))
         {
-            enemyHealth = collision.GetComponent<Health>();
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damage);
-            }
             GameObject explosion = Instantiate(smallExplosion, transform.position, transform.rotation);
         }
     }
