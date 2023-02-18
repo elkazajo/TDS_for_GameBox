@@ -53,6 +53,9 @@ TagManager:
   - name: Enemy
     uniqueID: 3994854141
     locked: 0
+  - name: PowerUp
+    uniqueID: 3635907067
+    locked: 0
   - name: Player
     uniqueID: 3734361895
     locked: 0
