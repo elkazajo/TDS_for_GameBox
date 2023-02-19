@@ -16,7 +16,7 @@ public class PowerUpMenuManager : MonoBehaviour
 
     private int selectedObjectsAmount = 3;
     private int currentExperience;
-    private int experienceToUpgrade = 20;
+    private int experienceToUpgrade = 200;
     private int nextUpgrade = 600;
 
     private void Start()
