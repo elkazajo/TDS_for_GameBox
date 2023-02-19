@@ -11,33 +11,41 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float shootingForce = 20f;       
     
-    private Rigidbody2D rigidbody2D;    
+    private Rigidbody2D rigidbody2D;
+    private Health health;
 
-    public bool isDead =  false;
+    public bool isAlive;
+    public bool isShooting = false;
     public bool wasShot  = false;
+    public Vector2 direction;
 
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        health = GetComponent<Health>();        
     }
 
     private void Update()
     {
         Move();
         Shoot();
-        //Hurt();
     }
 
     private void Move()
     {
-        if (!isDead)
+        isAlive = health.isAlive;
+
+        if (isAlive)
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
             float scaleFactor = 1f;
 
-            Vector2 direction = new Vector2(horizontal, vertical);            
+            direction = new Vector2(horizontal, vertical);            
             rigidbody2D.velocity = direction * movementSpeed;
+
+            Debug.Log("Direction: " + direction);
+            Debug.Log("rigidbody2D velocity: " + rigidbody2D.velocity);
 
             Vector2 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -55,9 +63,11 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        if (!isDead && Input.GetButtonDown("Fire1"))
+        if (isAlive && Input.GetButtonDown("Fire1"))
         {
             GameObject bullet;
+
+            isShooting = true;
 
             if (!wasShot)
             {
@@ -73,26 +83,7 @@ public class PlayerController : MonoBehaviour
             Rigidbody2D bulletRigidbody2D = bullet.GetComponent<Rigidbody2D>();
             bulletRigidbody2D.velocity = shootingForce * Vector2.right * transform.localScale.x;
         }
+
+        isShooting = false;
     }
-
-    //private void Hurt()
-    //{
-    //    if (!isDead)
-    //    {
-    //        health -= damageTaken;
-    //        
-
-    //        if (health <= 0)
-    //        {
-    //            isDead = true;
-    //            StartCoroutine(Die());
-    //        }
-    //    }
-    //}
-
-    //private IEnumerator Die()
-    //{
-    //    yield return new WaitForSeconds(deathDuration);
-    //    Destroy(gameObject);
-    //}
 }

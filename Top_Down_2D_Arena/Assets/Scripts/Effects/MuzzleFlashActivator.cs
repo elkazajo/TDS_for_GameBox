@@ -7,9 +7,7 @@ public class MuzzleFlashActivator : MonoBehaviour
     [SerializeField] private GameObject muzzleFlash;
     [SerializeField] private GameObject muzzleFlash2;
 
-    private string animName = "MuzzleFlash";
     private PlayerController playerController;
-    
 
     void Start()
     {
@@ -19,13 +17,11 @@ public class MuzzleFlashActivator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!playerController.isDead && Input.GetButtonDown("Fire1"))
+        if (!playerController.isAlive && Input.GetButtonDown("Fire1"))
         {
             if (!playerController.wasShot)
             {
                 muzzleFlash.SetActive(true);
-                
-
             }
             else
             {

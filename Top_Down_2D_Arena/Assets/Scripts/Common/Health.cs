@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private GameObject expereiencePrefab;
 
-    private void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
         isAlive = true;

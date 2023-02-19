@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8785795110124716384}
   - component: {fileID: 8785795110124716414}
   - component: {fileID: 3727171520155948020}
+  - component: {fileID: 4163767258761014052}
   m_Layer: 6
   m_Name: CentipedeHead
   m_TagString: Enemy
@@ -29,8 +30,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8785795110124716388}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.37, y: 1.92, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -139,8 +140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e72b341af6b7041992bb15b82c2940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2
   attackDistance: 1
+  isRunning: 0
+  isShooting: 0
+  canShoot: 0
 --- !u!58 &8785795110124716414
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -178,3 +182,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4163767258761014052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8785795110124716388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3a195e52a24ce4bab7bf6b51850a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

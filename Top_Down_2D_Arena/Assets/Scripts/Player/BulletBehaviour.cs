@@ -8,11 +8,22 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Wall") || collision.CompareTag("Enemy") || collision.CompareTag("Obstacle"))
+        if(!gameObject.CompareTag("EnemyBullet"))
         {
-            GameObject bulletImpact = Instantiate(bulletImpactPrefab, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }        
+            if (collision.CompareTag("Wall") || collision.CompareTag("Enemy") || collision.CompareTag("Obstacle"))
+            {
+                GameObject bulletImpact = Instantiate(bulletImpactPrefab, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (collision.CompareTag("Wall") || collision.CompareTag("Player") || collision.CompareTag("Obstacle"))
+            {
+                GameObject bulletImpact = Instantiate(bulletImpactPrefab, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+        }           
     }
 
     private void OnBecameInvisible()

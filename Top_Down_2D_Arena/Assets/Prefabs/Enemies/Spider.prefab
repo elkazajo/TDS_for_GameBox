@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6047184660344819918}
   - component: {fileID: -7569588986715725942}
   - component: {fileID: -2208168771685186962}
+  - component: {fileID: -3458148354204607997}
   m_Layer: 6
   m_Name: Spider
   m_TagString: Enemy
@@ -33,7 +34,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1806521057308218009}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -119,8 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e72b341af6b7041992bb15b82c2940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  attackDistance: 3
+  moveSpeed: 1.5
+  attackDistance: 5
+  isRunning: 0
+  isShooting: 0
+  canShoot: 1
 --- !u!95 &6047184660344819918
 Animator:
   serializedVersion: 4
@@ -178,3 +183,135 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-3458148354204607997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6047184660344819919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3a195e52a24ce4bab7bf6b51850a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7477522970907575611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806521057308218009}
+  - component: {fileID: 4642074130356624440}
+  m_Layer: 6
+  m_Name: BulletSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1806521057308218009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477522970907575611}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.502, y: 0.037, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8232170784565148641}
+  m_Father: {fileID: 6047184660344819916}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4642074130356624440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477522970907575611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff639d484cbdba4881df6d82f3f7a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6547105241588082156, guid: ba07e2a3d54060a4989904a18e933c8b, type: 3}
+  muzzleFlash: {fileID: 8232170784565148644}
+  bulletSpeed: 2
+  shootingInterval: 5
+--- !u!1001 &1421245193330775530
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1806521057308218009}
+    m_Modifications:
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815438, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_Name
+      value: EnemyMuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027811484187815438, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+--- !u!4 &8232170784565148641 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7027811484187815435, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+  m_PrefabInstance: {fileID: 1421245193330775530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8232170784565148644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7027811484187815438, guid: 5eea3287778e1604599a2f7571f43328, type: 3}
+  m_PrefabInstance: {fileID: 1421245193330775530}
+  m_PrefabAsset: {fileID: 0}

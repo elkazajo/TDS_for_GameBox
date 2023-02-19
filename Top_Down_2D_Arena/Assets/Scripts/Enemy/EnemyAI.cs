@@ -10,6 +10,10 @@ public class EnemyAI : MonoBehaviour
     private GameObject player;
     private Vector3 direction;
 
+    public bool isRunning;
+    public bool isShooting;
+    public bool canShoot;
+
     private void Start()
     {
         player = GameObject.Find("Player");
@@ -24,7 +28,10 @@ public class EnemyAI : MonoBehaviour
 
         if(player != null && Vector3.Distance(player.transform.position, transform.position) > attackDistance)
         {
-            transform.position += direction * moveSpeed * Time.deltaTime;
+            isRunning = true;
+            isShooting = false;
+
+            transform.position += direction * moveSpeed * Time.deltaTime;            
 
             if (direction.x > 0)
             {
@@ -34,6 +41,15 @@ public class EnemyAI : MonoBehaviour
             {
                 transform.localScale = new Vector3(-1, 1, 1);
             }
-        }        
+        } 
+        else
+        {
+            isRunning = false;
+
+            if (canShoot)
+            {
+                isShooting = true;
+            }
+        }
     }
 }

@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
         if (numEnemies % centipedeHeadThreshold == 0)
         {
             CancelInvoke("InstantiateCentipedeHead");
-            InvokeRepeating("InstantiateHornet", 0f, 2);
+            InvokeRepeating("InstantiateHornet", 0f, 5);
         }
     }
 
@@ -73,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
         if (numEnemies % hornetThreshold == 0)
         {
             CancelInvoke("InstantiateHornet");
-            InvokeRepeating("InstantiateScarab", 0f, 2);
+            InvokeRepeating("InstantiateScarab", 0f, 7);
         }
     }
 
@@ -85,7 +85,7 @@ public class EnemySpawner : MonoBehaviour
         if (numEnemies % scarabThreshold == 0)
         {
             CancelInvoke("InstantiateScarab");
-            InvokeRepeating("InstantiateSpider", 0f, 2);
+            InvokeRepeating("InstantiateSpider", 0f, 8);
         }
     }
 
