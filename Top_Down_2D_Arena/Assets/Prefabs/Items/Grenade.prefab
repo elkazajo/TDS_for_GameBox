@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 8019130807385280419}
   - component: {fileID: 8019130807385280418}
   - component: {fileID: 535033108}
-  - component: {fileID: 267951220}
-  - component: {fileID: 267951225}
+  - component: {fileID: 4358672050430970685}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -659060229
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1979061039, guid: f064215fdb1aef147aba1ac0180047fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,7 +123,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.032047957, y: -0.040314153}
   m_Size: {x: 0.42158002, y: 0.46794054}
   m_Direction: 0
---- !u!114 &267951220
+--- !u!114 &4358672050430970685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,26 +132,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8019130807385280417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f4378ec12939141b9d13049549d1e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 993559c931b5afa46a0568600b44b198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  damage: 10
-  distanceFromPlayer: 3
   smallExplosion: {fileID: 209753484788749636, guid: 78f0059677bc4504aba632244d3200d0, type: 3}
---- !u!114 &267951225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8019130807385280417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a9dad1691b95b3409dcbd55c2214e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 10
-  targetTag:
-  - Enemy
-  - Player
+  distanceFromPlayer: 3

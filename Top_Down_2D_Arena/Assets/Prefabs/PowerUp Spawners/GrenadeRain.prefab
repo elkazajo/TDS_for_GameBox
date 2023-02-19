@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallingObjectPrefab: {fileID: 8019130807385280417, guid: 820c229f9f25eda4a92b73cfb4284b59, type: 3}
-  explosionPrefab: {fileID: 4125297123729529053, guid: 1d5d9f9f2a9190e4a80ff33c35d1b1fd, type: 3}
+  explosionPrefab: {fileID: 4125297123729529053, guid: bf77b9e2a3c8a9141947a770e84e091c, type: 3}
   fallSpeed: 5
   minY: -5
   maxY: 5

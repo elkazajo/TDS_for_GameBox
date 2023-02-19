@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -300113155
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -120300898, guid: 28566dda0088d0744a63f752f1d1166d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -153,8 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffectPrefab: {fileID: 7668745522887880549, guid: 14a227c3862bccf4c87c4d78199092b6, type: 3}
   isPlayer: 0
-  experienceAmount: 20
-  maxHealth: 40
+  experienceAmount: 30
+  maxHealth: 30
   currentHealth: 0
   isAlive: 0
 --- !u!50 &6840071156056345134

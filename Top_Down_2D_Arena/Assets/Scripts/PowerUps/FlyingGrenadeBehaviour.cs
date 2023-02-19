@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingGrenade : MonoBehaviour
+public class FlyingGrenadeBehaviour : MonoBehaviour
 {
-    [SerializeField] private float speed = 3f;
-    [SerializeField] private float damage = 10f;
-    [SerializeField] private float distanceFromPlayer = 5.0f;
     [SerializeField] private GameObject smallExplosion;
+    [SerializeField] private float distanceFromPlayer = 3.0f;
 
     private Transform playerTransform;
     private string enemyTag = "Enemy";
