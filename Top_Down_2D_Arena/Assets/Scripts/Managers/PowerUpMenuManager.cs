@@ -12,6 +12,8 @@ public class PowerUpMenuManager : MonoBehaviour
     private Vector2 centerPanelPosition = new Vector2(0, -7.26251221f);
     private Vector2 rightPanelPosition = new Vector2(590, -7.26251221f);
 
+    private PlayerController playerController;
+
     private List<GameObject> selectedObjects;
 
     private int selectedObjectsAmount = 3;
@@ -21,6 +23,8 @@ public class PowerUpMenuManager : MonoBehaviour
 
     private void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
+
         selectedObjects = new List<GameObject>();
 
         for (int i = 0; i < selectedObjectsAmount; i++)
@@ -53,6 +57,8 @@ public class PowerUpMenuManager : MonoBehaviour
         if (currentExperience >= experienceToUpgrade)
         {
             powerUpsMenuCanvas.enabled = true;
+
+            playerController.enabled = false;
 
             GameObject leftPanel = Instantiate(selectedObjects[0], powerUpsMenuCanvas.transform);
             RectTransform leftPanelRectTransform = leftPanel.GetComponent<RectTransform>();

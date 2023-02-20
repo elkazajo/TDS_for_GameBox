@@ -749,8 +749,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1500, y: 500}
+  m_AnchoredPosition: {x: 0, y: -20.4487}
+  m_SizeDelta: {x: 1500, y: 702.8973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697773337
 MonoBehaviour:
@@ -787,10 +787,29 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Press W, A, S, D to move around.
 
-    Move mouse coursor around to turn
-    the player right or left.
+    
 
-    Press Left Mouse Button to Shoot!
+    Move mouse coursor around
+    to turn player left or right
+
+    
+
+    Click Left Mouse Button to shoot.
+
+    
+
+    Everytime
+    you kill enemies, they drop experience, gather it to open new abilities.
+
+    
+
+    Everytime
+    you pick new ablity, if it was already picked then it upgrades the damaging power
+    of the ability.
+
+    
+
+    To close the game pres Alt + F4 ;)
 
 '
 --- !u!222 &697773338
