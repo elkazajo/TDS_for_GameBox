@@ -16,14 +16,17 @@ public class UiManager : MonoBehaviour
     private GameObject player;
     private Health playerHealth;
     private Timer currentTimer;
+    private AudioManager audioManager;
+
     public int totalExperience;
         
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         gameOverCanvas.enabled = false;
         playerHealth = player.GetComponent<Health>();
         currentTimer = FindObjectOfType<Timer>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
         
     void Update()
@@ -34,7 +37,9 @@ public class UiManager : MonoBehaviour
 
         if (!playerHealth.isAlive)
         {
-            gameOverCanvas.enabled = true;
+            audioManager.Play("gameOver");
+
+            gameOverCanvas.enabled = true;            
 
             Time.timeScale = 0;
 

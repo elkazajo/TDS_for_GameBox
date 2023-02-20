@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectRain : MonoBehaviour
+public class ObjectRain : BasePowerUp
 {
     [SerializeField] private GameObject fallingObjectPrefab;
     [SerializeField] private GameObject explosionPrefab;
@@ -50,7 +50,7 @@ public class ObjectRain : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 rb.position = stopPosition;
 
-                // Instantiate the explosion prefab and destroy the falling object
+                PlaySfx("explosion");
                 Instantiate(explosionPrefab, fallingObject.transform.position, Quaternion.identity);
                 Destroy(rb.gameObject);
 

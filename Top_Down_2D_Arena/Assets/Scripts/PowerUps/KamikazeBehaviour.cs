@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KamikazeBehaviour : MonoBehaviour
+public class KamikazeBehaviour : BasePowerUp
 {
     [SerializeField] private GameObject bigExplosionPrefab;
 
@@ -10,6 +10,7 @@ public class KamikazeBehaviour : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            PlaySfx("explosion");
             Instantiate(bigExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

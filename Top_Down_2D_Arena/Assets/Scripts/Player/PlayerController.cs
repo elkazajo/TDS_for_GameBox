@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject bulletSpwaner;
     [SerializeField] private GameObject bulletSpwaner2;
+    
+    private AudioManager audioManager;
 
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float shootingForce = 20f;       
@@ -22,7 +24,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        health = GetComponent<Health>();        
+        health = GetComponent<Health>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -65,6 +68,8 @@ public class PlayerController : MonoBehaviour
             GameObject bullet;
 
             isShooting = true;
+
+            audioManager.Play("shoot");
 
             if (!wasShot)
             {

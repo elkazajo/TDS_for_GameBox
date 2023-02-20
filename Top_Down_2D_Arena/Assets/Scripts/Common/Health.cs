@@ -17,9 +17,11 @@ public class Health : MonoBehaviour
     private Color originalColor = Color.white;
     private SpriteRenderer spriteRenderer;
     private GameObject expereiencePrefab;
+    private AudioManager audioManager;
 
     private void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         currentHealth = maxHealth;
         isAlive = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,11 +30,17 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        if (gameObject.CompareTag("Player"))
+        {
+            audioManager.Play("playerHit");
+        }
+
         currentHealth -= amount;
         spriteRenderer.color = Color.red;
 
         if (currentHealth <= 0)
         {
+            audioManager.Play("enemyDeath");
             Die();
         }
         else

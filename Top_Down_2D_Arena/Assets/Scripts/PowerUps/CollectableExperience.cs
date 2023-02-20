@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CollectableExperience : MonoBehaviour
 {
-    private UiManager ui;    
+    private UiManager ui;
+    private AudioManager audioManager;
     private int experience;
 
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         ui = FindObjectOfType<UiManager>();
     }
 
@@ -26,6 +28,7 @@ public class CollectableExperience : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            audioManager.Play("experience");
             ui.totalExperience += experience;
             Destroy(gameObject);
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombBarrelBehaviour : MonoBehaviour
+public class BombBarrelBehaviour : BasePowerUp
 {
     [SerializeField] private GameObject bigExplosionPrefab;
 
@@ -10,6 +10,7 @@ public class BombBarrelBehaviour : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            PlaySfx("explosion");
             Instantiate(bigExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

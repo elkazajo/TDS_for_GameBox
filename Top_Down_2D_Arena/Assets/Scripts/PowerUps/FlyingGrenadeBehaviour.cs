@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingGrenadeBehaviour : MonoBehaviour
+public class FlyingGrenadeBehaviour : BasePowerUp
 {
     [SerializeField] private GameObject smallExplosion;
     [SerializeField] private float distanceFromPlayer = 3.0f;
@@ -25,6 +25,7 @@ public class FlyingGrenadeBehaviour : MonoBehaviour
     {
         if (collision.CompareTag(enemyTag))
         {
+            PlaySfx("explosion");
             GameObject explosion = Instantiate(smallExplosion, transform.position, transform.rotation);
         }
     }

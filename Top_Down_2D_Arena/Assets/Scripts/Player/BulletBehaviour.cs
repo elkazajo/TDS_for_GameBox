@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    [SerializeField] private GameObject bulletImpactPrefab;    
+    [SerializeField] private GameObject bulletImpactPrefab;
+    [SerializeField] private AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,6 +18,7 @@ public class BulletBehaviour : MonoBehaviour
         {
             if (collision.CompareTag("Wall") || collision.CompareTag("Enemy") || collision.CompareTag("Obstacle"))
             {
+                audioManager.Play("enemyHit");
                 GameObject bulletImpact = Instantiate(bulletImpactPrefab, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
@@ -20,6 +27,7 @@ public class BulletBehaviour : MonoBehaviour
         {
             if (collision.CompareTag("Wall") || collision.CompareTag("Player") || collision.CompareTag("Obstacle"))
             {
+                audioManager.Play("enemyHit");
                 GameObject bulletImpact = Instantiate(bulletImpactPrefab, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
