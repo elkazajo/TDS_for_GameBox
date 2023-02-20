@@ -1261,13 +1261,13 @@ MonoBehaviour:
   - name: theme
     clip: {fileID: 8300000, guid: d6684838bc6f33d448a866c8c883578a, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 1
     audioSource: {fileID: 0}
   - name: click
     clip: {fileID: 8300000, guid: 1509592f0f58c294686ba84bbef86b29, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     audioSource: {fileID: 0}
 --- !u!4 &1475483138
