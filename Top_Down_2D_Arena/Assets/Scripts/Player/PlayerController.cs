@@ -44,9 +44,6 @@ public class PlayerController : MonoBehaviour
             direction = new Vector2(horizontal, vertical);            
             rigidbody2D.velocity = direction * movementSpeed;
 
-            Debug.Log("Direction: " + direction);
-            Debug.Log("rigidbody2D velocity: " + rigidbody2D.velocity);
-
             Vector2 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 

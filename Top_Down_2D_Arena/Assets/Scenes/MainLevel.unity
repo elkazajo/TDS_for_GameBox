@@ -1671,6 +1671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce9d89676cfc4f4f904e36a0a4dcda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverCanvas: {fileID: 652279447}
+  totalExperienceGained: {fileID: 1646600904}
+  totalTime: {fileID: 1484250152}
   hp: {fileID: 325244473}
   exp: {fileID: 262642843}
   timer: {fileID: 464651628}
@@ -24764,7 +24767,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652279443}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -25066,17 +25069,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8738610324219798952, guid: dc7127b8360ac3348b05a9fc587885ff, type: 3}
   m_PrefabInstance: {fileID: 8738610323532775208}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1208655276 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8738610324219798944, guid: dc7127b8360ac3348b05a9fc587885ff, type: 3}
-  m_PrefabInstance: {fileID: 8738610323532775208}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208655274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a81a8418e6b7f584e83422dee64780f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1208655283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25323,7 +25315,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -536}
-  m_SizeDelta: {x: 600, y: 90}
+  m_SizeDelta: {x: 800, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1484250152
 MonoBehaviour:
@@ -25470,7 +25462,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -385}
-  m_SizeDelta: {x: 600, y: 90}
+  m_SizeDelta: {x: 800, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1646600904
 MonoBehaviour:
@@ -25926,10 +25918,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpMenuCanvas: {fileID: 8007444305920871822}
-  gameOverCanvas: {fileID: 652279447}
-  playerHealth: {fileID: 1208655276}
-  totalExperience: {fileID: 1646600904}
-  totalTime: {fileID: 1484250152}
 --- !u!1 &2137328282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5490820821798392766, guid: cf52929d8f36ff644bc47af7a3a5e18d, type: 3}

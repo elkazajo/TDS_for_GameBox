@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CollectableExperience : MonoBehaviour
 {
-    private UI ui;    
+    private UiManager ui;    
     private int experience;
 
     private void Start()
     {
-        ui = FindObjectOfType<UI>();
+        ui = FindObjectOfType<UiManager>();
     }
 
     public void SetExperience(int newExperience)

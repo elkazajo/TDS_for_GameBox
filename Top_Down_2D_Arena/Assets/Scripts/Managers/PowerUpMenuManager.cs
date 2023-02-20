@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUpMenuManager : MonoBehaviour
 {
     [SerializeField] private Canvas powerUpsMenuCanvas;
-    [SerializeField] private UI ui;
+    [SerializeField] private UiManager ui;
     [SerializeField] GameObject[] powerUpPanels;    
 
     private Vector2 leftPanelPosition = new Vector2(-588, 0);
@@ -16,7 +16,7 @@ public class PowerUpMenuManager : MonoBehaviour
 
     private int selectedObjectsAmount = 3;
     private int currentExperience;
-    private int experienceToUpgrade = 200;
+    private int experienceToUpgrade = 0;
     private int nextUpgrade = 600;
 
     private void Start()
